@@ -6,9 +6,6 @@
 
 #include "generated_plugin_registrant.h"
 
-#include <dialog_alert_transition/dialog_alert_transition_plugin_c_api.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
-  DialogAlertTransitionPluginCApiRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("DialogAlertTransitionPluginCApi"));
 }

@@ -2,6 +2,7 @@ name: dialog_alert_transition
 description: "Creating a dialog is simpler and easier with the dialog_alert_transition package since it has transitions into and out of the dialog, it has a multilevel dialog handler. Available for android, ios, windows, linux, mac, web"
 version: 1.0.0
 homepage: http://mrNio.com
+repository: https://github.com/surco123es/dialog_alert_transition
 environment:
   sdk: '>=3.2.4 <4.0.0'
   flutter: '>=3.3.0'

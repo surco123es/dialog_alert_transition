@@ -156,4 +156,5 @@ class _multiAlert extends State<singleAlert> {
 ## Screenshots
 
 ![Dialog alert in action ](https://github.com/surco123es/dialog_alert_transition/blob/main/exclude/Dialog_alert_transition.gif?raw=true)
+![Dialog alert in action ](https://github.com/surco123es/dialog_alert_transition/blob/main/exclude/transition.gif?raw=true)
 
