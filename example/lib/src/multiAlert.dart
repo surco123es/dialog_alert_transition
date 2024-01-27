@@ -7,13 +7,13 @@ class multiAlert extends StatefulWidget {
 }
 
 class _multiAlert extends State<multiAlert> {
-  String stas = 'texto anterior';
+  String stas = 'Text old';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Plugin example app'),
+        title: const Text('Multi dialog'),
       ),
       body: Center(
         child: ListView(
@@ -22,8 +22,7 @@ class _multiAlert extends State<multiAlert> {
               TextButton(
                 onPressed: () {
                   int newToken = controlAlertGo.generate();
-                  print('token principal $newToken');
-                  alertGo(
+                  dialogAlertTransion(
                       context: context,
                       title: const Text('Flutter OutlinedButton Example'),
                       content: Column(
@@ -34,7 +33,7 @@ class _multiAlert extends State<multiAlert> {
                             onPressed: () {
                               int newToken = controlAlertGo.generate();
                               print('token principal $newToken');
-                              alertGo(
+                              dialogAlertTransion(
                                 context: context,
                                 title: const Text(
                                     'Flutter OutlinedButton Example'),
@@ -81,7 +80,7 @@ class _multiAlert extends State<multiAlert> {
                       token: newToken,
                       closeFunc: () {
                         setState(() {
-                          stas = 'nuevo texto';
+                          stas = 'New string';
                         });
                       });
                 },

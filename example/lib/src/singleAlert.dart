@@ -7,17 +7,17 @@ class singleAlert extends StatefulWidget {
   const singleAlert({super.key});
 
   @override
-  State<singleAlert> createState() => _multiAlert();
+  State<singleAlert> createState() => _singleAlert();
 }
 
-class _multiAlert extends State<singleAlert> {
-  String stas = 'texto anterior';
+class _singleAlert extends State<singleAlert> {
+  String stas = 'text old';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Plugin example app'),
+        title: const Text('Single dialog'),
       ),
       body: Center(
         child: ListView(
@@ -26,7 +26,7 @@ class _multiAlert extends State<singleAlert> {
               TextButton(
                 onPressed: () {
                   int newToken = controlAlertGo.generate();
-                  alertGo(
+                  dialogAlertTransion(
                       context: context,
                       title: const Text('Flutter OutlinedButton Example'),
                       content: const Column(
@@ -51,7 +51,7 @@ class _multiAlert extends State<singleAlert> {
                       },
                       closeFunc: () {
                         setState(() {
-                          stas = 'nuevo texto';
+                          stas = 'New String change var';
                         });
                       });
                 },

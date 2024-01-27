@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'alertModel.dart';
 
-alertGo({
+dialogAlertTransion({
   required BuildContext context,
   bool designer = false,
   Widget alertWd = const Text(''),

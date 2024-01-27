@@ -11,13 +11,13 @@ class customAlert extends StatefulWidget {
 }
 
 class _customAlert extends State<customAlert> {
-  String stas = 'texto anterior';
+  String stas = 'String old';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Plugin example app'),
+        title: const Text('Custon dialog alert'),
       ),
       body: Center(
         child: ListView(
@@ -26,7 +26,7 @@ class _customAlert extends State<customAlert> {
               TextButton(
                 onPressed: () {
                   int newToken = controlAlertGo.generate();
-                  alertGo(
+                  dialogAlertTransion(
                     transitionType: e,
                     token: newToken,
                     context: context,
@@ -98,39 +98,39 @@ class customWidget extends StatelessWidget {
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                     overflow: TextOverflow.clip,
-                    '''Había una vez un pequeño pueblo enclavado entre las montañas. Sus calles empedradas estaban llenas de vida y color, y sus habitantes se conocían todos por sus nombres. En el centro del pueblo se alzaba una antigua iglesia de piedra, con un campanario que resonaba cada hora.
+                    '''Once upon a time there was a small town nestled among the mountains. Its cobblestone streets were full of life and color, and its inhabitants all knew each other by name. In the center of the town stood an old stone church, with a bell tower that rang every hour.
                       
-                      Un día, llegó un forastero al pueblo. Era un hombre alto y delgado, con ojos cansados y una barba descuidada. Se llamaba Martín y venía en busca de algo que había perdido hacía mucho tiempo.
+                      One day, a stranger came to town. He was a tall, thin man, with tired eyes and an unkempt beard. His name was Martín and he came in search of something that he had lost a long time ago.
                       
-                      Martín se instaló en una pequeña posada al borde del pueblo. Durante el día, recorría las calles con la mirada perdida, como si buscara algo que no podía encontrar. Los habitantes del pueblo lo miraban con curiosidad, pero nadie se atrevía a preguntarle qué le sucedía.
+                      Martín settled in a small inn on the edge of the town. During the day, he walked the streets with his gaze lost, as if he were looking for something he couldn't find. The townspeople looked at him with curiosity, but no one dared to ask him what was happening to him.
                       
-                      Una tarde, Martín se acercó al campanario de la iglesia. Subió los escalones de piedra con dificultad y se detuvo en la plataforma de madera. Miró hacia el horizonte, donde las montañas se perdían en la bruma.
+                      One afternoon, Martín approached the church bell tower. He climbed the stone steps with difficulty and stopped on the wooden platform. He looked toward the horizon, where the mountains were lost in the mist.
                       
-                      —¿Qué buscas, forastero? —preguntó una voz detrás de él.
+                      "What are you looking for, stranger?" —A voice asked behind him.
                       
-                      Martín se giró y vio a un anciano con el rostro curtido por el sol. El anciano llevaba un sombrero de paja y una vara de madera en la mano.
+                      Martín turned around and saw an old man with a sun-beaten face. The old man was wearing a straw hat and carrying a wooden stick in his hand.
                       
-                      —Busco respuestas —respondió Martín—. He perdido algo muy importante y no sé dónde encontrarlo.
+                      "I'm looking for answers," Martín responded. I have lost something very important and I don't know where to find it.
                       
-                      El anciano sonrió y se sentó en un banco de piedra.
+                      The old man smiled and sat down on a stone bench.
                       
-                      —Las respuestas están en el viento —dijo—. Escucha su susurro y encontrarás lo que buscas.
+                      "The answers are in the wind," he said. Listen to his whisper and you will find what you are looking for.
                       
-                      Martín se quedó perplejo. ¿Cómo podía el viento tener respuestas? Pero decidió seguir el consejo del anciano. Cerró los ojos y se dejó llevar por la brisa que acariciaba su rostro.
+                      Martin was perplexed. How could the wind have answers? But he decided to follow the old man's advice. He closed his eyes and let himself be carried away by the breeze that caressed his face.
                       
-                      Y entonces, Martín escuchó un murmullo. Era como si el viento le hablara en un idioma antiguo y olvidado. Las palabras flotaban en el aire, llevándolo hacia las montañas.
+                      And then, Martín heard a murmur. It was as if the wind spoke to him in an ancient and forgotten language. The words hung in the air, carrying him towards the mountains.
                       
-                      Martín caminó durante días, siguiendo el susurro del viento. Cruzó ríos y bosques, sorteó rocas y precipicios. Finalmente, llegó a una cueva en lo más alto de una montaña.
+                      Martín walked for days, following the whisper of the wind. He crossed rivers and forests, avoided rocks and precipices. Finally, he came to a cave at the top of a mountain.
                       
-                      Dentro de la cueva, encontró lo que había estado buscando: un viejo libro de tapas desgastadas. Sus páginas estaban llenas de símbolos y palabras en una lengua desconocida. Martín sintió que había hallado un tesoro perdido.
+                      Inside the cave, he found what he had been looking for: an old book with worn covers. Its pages were filled with symbols and words in an unknown language. Martin felt that he had found a lost treasure.
                       
-                      Regresó al pueblo con el libro bajo el brazo. El anciano lo esperaba en el campanario.
+                      He returned to town with the book under his arm. The old man was waiting for him in the bell tower.
                       
-                      —Has encontrado lo que buscabas —dijo el anciano—. Ahora, descifra las palabras del viento y encontrarás la verdad.
+                      "You have found what you were looking for," said the old man. Now, decipher the words of the wind and you will find the truth.
                       
-                      Martín pasó años estudiando el libro. Aprendió su idioma y descubrió que contenía secretos ancestrales sobre la vida y la muerte, el amor y el destino. Compartió su sabiduría con los habitantes del pueblo, y todos se maravillaron de sus enseñanzas.
+                      Martín spent years studying the book. He learned their language and discovered that it contained ancient secrets about life and death, love and destiny. He shared his wisdom with the townspeople, and they all marveled at his teachings.
                       
-                      Y así, Martín encontró su lugar en el mundo. Ya no era un forastero perdido, sino un guardián de la sabiduría ancestral. Y cada vez que el viento soplaba entre las montañas, Martín escuchaba su susurro y sonreía, porque sabía que las respuestas estaban allí, esperando a ser descubiertas12.'''),
+                      And so, Martín found his place in the world. He was no longer a lost stranger, but a guardian of ancient wisdom. And every time the wind blew through the mountains, Martin listened to its whisper and smiled, because he knew that the answers were there, waiting to be discovered12.'''),
               ),
             ),
           ),
