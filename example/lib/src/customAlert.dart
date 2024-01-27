@@ -77,11 +77,7 @@ class customWidget extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    controlAlertGo.controll[token]!.reverse().then(
-                      (_) {
-                        Navigator.of(context).pop();
-                      },
-                    );
+                    controlAlertGo.close(token: token, context: context);
                   },
                   child: const Text('back'),
                 ),

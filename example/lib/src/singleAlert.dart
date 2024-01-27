@@ -25,7 +25,6 @@ class _singleAlert extends State<singleAlert> {
             for (transitionType e in transitionType.values) ...[
               TextButton(
                 onPressed: () {
-                  int newToken = controlAlertGo.generate();
                   dialogAlertTransion(
                       context: context,
                       title: const Text('Flutter OutlinedButton Example'),
@@ -40,9 +39,8 @@ class _singleAlert extends State<singleAlert> {
                       duration: 1000,
                       backgroundColor: Colors.black,
                       transitionType: e,
-                      token: newToken,
-                      rejectString: 'Close alert',
-                      acceptString: 'Confirm this alert',
+                      rejectString: 'Close',
+                      acceptString: 'Confirm',
                       rejectFunc: () {
                         print('this function use is reject alert');
                       },

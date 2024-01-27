@@ -81,9 +81,7 @@ class MainAlertGo extends StatelessWidget {
           if (close)
             GestureDetector(
               onTap: () {
-                controlAlertGo.controll[token]!
-                    .reverse()
-                    .then((_) => Navigator.of(context).pop());
+                controlAlertGo.close(token: token, context: context);
               },
             ),
           Align(
@@ -110,9 +108,8 @@ class MainAlertGo extends StatelessWidget {
                                   if (closeFunc != null) {
                                     closeFunc!();
                                   }
-                                  controlAlertGo.controll[token]!
-                                      .reverse()
-                                      .then((_) => Navigator.of(context).pop());
+                                  controlAlertGo.close(
+                                      token: token, context: context);
                                 },
                                 child: const Text('X')),
                             Container(
@@ -159,11 +156,10 @@ class MainAlertGo extends StatelessWidget {
                                               if (rejectFunc != null) {
                                                 rejectFunc!();
                                               }
-                                              controlAlertGo.controll[token]!
-                                                  .reverse()
-                                                  .then((_) =>
-                                                      Navigator.of(context)
-                                                          .pop());
+
+                                              controlAlertGo.close(
+                                                  token: token,
+                                                  context: context);
                                             },
                                             child: Text(rejectString),
                                           ),
@@ -177,11 +173,9 @@ class MainAlertGo extends StatelessWidget {
                                               if (acceptFunc != null) {
                                                 acceptFunc!();
                                               }
-                                              controlAlertGo.controll[token]!
-                                                  .reverse()
-                                                  .then((_) =>
-                                                      Navigator.of(context)
-                                                          .pop());
+                                              controlAlertGo.close(
+                                                  token: token,
+                                                  context: context);
                                             },
                                             child: Text(acceptString),
                                           ),

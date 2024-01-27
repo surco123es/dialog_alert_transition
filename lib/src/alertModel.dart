@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names, camel_case_types, unused_element
 import 'dart:math';
 
-import 'package:flutter/animation.dart';
+import 'package:flutter/material.dart';
 
 class _controllerGoALert {
   Map<int, AnimationController> controll = {};
@@ -11,6 +11,19 @@ class _controllerGoALert {
     int min = 10000;
     int token = min + random.nextInt((max + 1) - 1);
     return token;
+  }
+
+  Future<bool> close(
+      {required int token, required BuildContext context}) async {
+    if (controll.containsKey(token)) {
+      controll[token]!.reverse().then((_) {
+        Navigator.of(context).pop();
+      });
+      controll.remove(token);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 

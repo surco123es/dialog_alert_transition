@@ -21,7 +21,6 @@ class _multiAlert extends State<multiAlert> {
             for (transitionType e in transitionType.values) ...[
               TextButton(
                 onPressed: () {
-                  int newToken = controlAlertGo.generate();
                   dialogAlertTransion(
                       context: context,
                       title: const Text('Flutter OutlinedButton Example'),
@@ -31,8 +30,7 @@ class _multiAlert extends State<multiAlert> {
                               'FloatingActionButton (FAB) is a property of Scaffold(). In the above example, we’ve displayed a FloatingActionButton, also we’ve modified the style of that buttons such as color and position of the FAB. The output looks like this'),
                           ElevatedButton(
                             onPressed: () {
-                              int newToken = controlAlertGo.generate();
-                              print('token principal $newToken');
+                              int token = controlAlertGo.generate();
                               dialogAlertTransion(
                                 context: context,
                                 title: const Text(
@@ -43,13 +41,8 @@ class _multiAlert extends State<multiAlert> {
                                         'FloatingActionButton (FAB) is a property of Scaffold(). In the above example, we’ve displayed a FloatingActionButton, also we’ve modified the style of that buttons such as color and position of the FAB. The output looks like this'),
                                     ElevatedButton(
                                       onPressed: () {
-                                        controlAlertGo.controll[newToken]!
-                                            .reverse()
-                                            .then(
-                                          (_) {
-                                            Navigator.of(context).pop();
-                                          },
-                                        );
+                                        controlAlertGo.close(
+                                            token: token, context: context);
                                       },
                                       child: const Text('back'),
                                     ),
@@ -60,7 +53,7 @@ class _multiAlert extends State<multiAlert> {
                                 transitionType: transitionType.ElasticIn,
                                 duration: 1000,
                                 backgroundColor: Colors.black,
-                                token: newToken,
+                                token: token,
                                 closeFunc: () {
                                   setState(() {
                                     stas = 'New  String';
@@ -77,7 +70,6 @@ class _multiAlert extends State<multiAlert> {
                       duration: 1000,
                       backgroundColor: Colors.black,
                       transitionType: e,
-                      token: newToken,
                       closeFunc: () {
                         setState(() {
                           stas = 'New string';
