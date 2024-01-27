@@ -1,9 +1,9 @@
 
 # Project Title
 
-crear un dialogo es más sencillo y fácil con el paquete de dialog_alert_transition ya que tiene transiciones de entrada y salida del dialogo, tiene un manejador de diálogos de multinivel. Disponible para android, ios, windows, linux, mac, web. 
+Creating a dialog is simpler and easier with the dialog_alert_transition package since it has transitions into and out of the dialog, it has a multilevel dialog handler. Available for android, ios, windows, linux, mac, web.
 
-Las transiciones son las siguientes: 
+The transitions are as follows:
 
     FadeIn, 
 
