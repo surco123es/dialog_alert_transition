@@ -137,7 +137,7 @@ class _multiAlert extends State<singleAlert> {
                       },
                       closeFunc: () {
                         setState(() {
-                          stas = 'new strin';
+                          stas = 'new string';
                         });
                       });
                 },
@@ -155,5 +155,5 @@ class _multiAlert extends State<singleAlert> {
 
 ## Screenshots
 
-![App Screenshot](https://github.com/surco123es/dialog_alert_transition/assets/13504354/32ecabe1-f2b6-48b2-9d91-187d0fa60e75)
+![Dialog alert in action ](https://github.com/surco123es/dialog_alert_transition/blob/main/exclude/Dialog_alert_transition.gif?raw=true)
 
