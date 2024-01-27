@@ -1,5 +1,5 @@
 
-# Project Title
+# Dialog alert transition
 
 Creating a dialog is simpler and easier with the dialog_alert_transition package since it has transitions into and out of the dialog, it has a multilevel dialog handler. Available for android, ios, windows, linux, mac, web.
 
