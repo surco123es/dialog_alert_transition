@@ -264,6 +264,8 @@ Change the position of the dialog with the positions right, left, bottom up by d
 ```
 # blur
 disable or enabled is
+...dart
 
  dialogAlertTransion(
                       blur: true ||false,...)
+...
