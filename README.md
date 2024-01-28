@@ -241,3 +241,29 @@ To send a custom dialog you must create a token and refer to the dialog handler 
                         });
                       });
 ```
+# Position
+
+Change the position of the dialog with the positions right, left, bottom up by default has the value of 0
+
+
+```dart
+
+                  dialogAlertTransion(
+                      top: 15,
+                      left: 25,
+                      bottom: 25,
+                      rigth: 50,
+                      context: context,
+                      title: const Text('Flutter OutlinedButton Example'),
+                      content: const Column(
+                        children: [
+                          Text(
+                              'FloatingActionButton (FAB) is a property of Scaffold(). In the above example, we’ve displayed a FloatingActionButton, also we’ve modified the style of that buttons such as color and position of the FAB. The output looks like this'),
+                        ],
+                      ),);
+```
+# blur
+disable or enabled is
+
+ dialogAlertTransion(
+                      blur: true ||false,...)

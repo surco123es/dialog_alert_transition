@@ -30,7 +30,7 @@ class _multiAlert extends State<multiAlert> {
                               'FloatingActionButton (FAB) is a property of Scaffold(). In the above example, we’ve displayed a FloatingActionButton, also we’ve modified the style of that buttons such as color and position of the FAB. The output looks like this'),
                           ElevatedButton(
                             onPressed: () {
-                              int token = controlAlertGo.generate();
+                              int token = controlDialogGO.generate();
                               dialogAlertTransion(
                                 context: context,
                                 title: const Text(
@@ -41,7 +41,7 @@ class _multiAlert extends State<multiAlert> {
                                         'FloatingActionButton (FAB) is a property of Scaffold(). In the above example, we’ve displayed a FloatingActionButton, also we’ve modified the style of that buttons such as color and position of the FAB. The output looks like this'),
                                     ElevatedButton(
                                       onPressed: () {
-                                        controlAlertGo.close(
+                                        controlDialogGO.close(
                                             token: token, context: context);
                                       },
                                       child: const Text('back'),

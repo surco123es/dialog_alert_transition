@@ -1,7 +1,7 @@
-import 'package:dialog_alert_transition/src/alertWidget.dart';
+import 'package:dialog_alert_transition/src/dialogWidget.dart';
 import 'package:flutter/material.dart';
 
-import 'alertModel.dart';
+import 'dialogModel.dart';
 
 dialogAlertTransion({
   required BuildContext context,
@@ -27,53 +27,59 @@ dialogAlertTransion({
   Function? acceptFunc,
   Function? rejectFunc,
   Function? closeFunc,
-}) {
+  double top = 0,
+  double left = 0,
+  double rigth = 0,
+  double bottom = 0,
+}) async {
   try {
-    showGeneralDialog(
-      context: context,
-      barrierDismissible: false,
-      transitionDuration: Duration.zero,
-      barrierColor: Colors.transparent,
-      pageBuilder: (BuildContext buildContext, animation, secondaryAnimation) {
-        return SafeArea(
-          child: MainAlertGo(
-            acceptString: acceptString,
-            rejectString: rejectString,
-            title: title,
-            contextMain: context,
-            content: content,
-            autoClose: autoClose,
-            blur: blur,
-            close: close,
-            countDown: countDown,
-            duration: duration,
-            animate: animate,
-            outClose: autoClose,
-            alertWd: alertWd,
-            designer: designer,
-            animationType: transitionType,
-            backgroundColor: Colors.black,
-            alignment: alignment,
-            acceptFunc: acceptFunc,
-            closeFunc: closeFunc,
-            rejectFunc: rejectFunc,
-            buttonConfirm: buttonConfirm,
-            token: token,
-            size: Size.zero == size
-                ? MediaQuery.of(context).size.width < 480
-                    ? Size(MediaQuery.of(context).size.width - 20, 0)
-                    : Size(MediaQuery.of(context).size.width / 3, 0)
-                : size,
-          ),
-        );
-      },
-      transitionBuilder: (context, animation, secondaryAnimation, child) {
-        return FadeTransition(
-          opacity: Tween<double>(begin: 0.0, end: 1.0).animate(animation),
-          child: child,
-        );
-      },
-    );
+    if (controlDialogGO.controll.containsKey(token)) {
+      await controlDialogGO.close(token: token, context: context);
+    }
+    controlDialogGO.controll.addAll({
+      token: dialogState(
+        state: OverlayEntry(
+          builder: (context) {
+            return Positioned(
+              top: top,
+              bottom: bottom,
+              left: left,
+              right: rigth,
+              child: MainAlertGoDialog(
+                acceptString: acceptString,
+                rejectString: rejectString,
+                title: title,
+                contextMain: context,
+                content: content,
+                autoClose: autoClose,
+                blur: blur,
+                close: close,
+                countDown: countDown,
+                duration: duration,
+                animate: animate,
+                outClose: autoClose,
+                alertWd: alertWd,
+                designer: designer,
+                animationType: transitionType,
+                backgroundColor: backgroundColor,
+                alignment: alignment,
+                acceptFunc: acceptFunc,
+                closeFunc: closeFunc,
+                rejectFunc: rejectFunc,
+                buttonConfirm: buttonConfirm,
+                token: token,
+                size: Size.zero == size
+                    ? MediaQuery.of(context).size.width < 480
+                        ? Size(MediaQuery.of(context).size.width - 20, 0)
+                        : Size(MediaQuery.of(context).size.width / 3, 0)
+                    : size,
+              ),
+            );
+          },
+        ),
+      )
+    });
+    Overlay.of(context).insert(controlDialogGO.controll[token]!.state);
   } catch (e) {
     print(e);
   }

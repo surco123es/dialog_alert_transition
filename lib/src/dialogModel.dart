@@ -3,8 +3,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+class dialogState {
+  AnimationController? animation;
+  OverlayEntry state;
+  dialogState({
+    this.animation,
+    required this.state,
+  });
+}
+
 class _controllerGoALert {
-  Map<int, AnimationController> controll = {};
+  Map<int, dialogState> controll = {};
   int generate() {
     Random random = Random();
     int max = 99999;
@@ -15,19 +24,24 @@ class _controllerGoALert {
 
   Future<bool> close(
       {required int token, required BuildContext context}) async {
-    if (controll.containsKey(token)) {
-      controll[token]!.reverse().then((_) {
-        Navigator.of(context).pop();
-      });
-      controll.remove(token);
-      return true;
-    } else {
+    try {
+      if (controll.containsKey(token)) {
+        await controll[token]!.animation?.reverse().then((_) {
+          controll[token]?.state.remove();
+          controll.remove(token);
+        });
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      print(e);
       return false;
     }
   }
 }
 
-_controllerGoALert controlAlertGo = _controllerGoALert();
+_controllerGoALert controlDialogGO = _controllerGoALert();
 
 enum transitionType {
   FadeIn,

@@ -25,7 +25,7 @@ class _customAlert extends State<customAlert> {
             for (transitionType e in transitionType.values) ...[
               TextButton(
                 onPressed: () {
-                  int newToken = controlAlertGo.generate();
+                  int newToken = controlDialogGO.generate();
                   dialogAlertTransion(
                     transitionType: e,
                     token: newToken,
@@ -77,7 +77,7 @@ class customWidget extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    controlAlertGo.close(token: token, context: context);
+                    controlDialogGO.close(token: token, context: context);
                   },
                   child: const Text('back'),
                 ),

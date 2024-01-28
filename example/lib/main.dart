@@ -1,6 +1,6 @@
-import 'package:alert_go_example/src/customAlert.dart';
-import 'package:alert_go_example/src/multiAlert.dart';
-import 'package:alert_go_example/src/singleAlert.dart';
+import 'package:alert_go_example/src/customDialog.dart';
+import 'package:alert_go_example/src/multiDialog.dart';
+import 'package:alert_go_example/src/singleDialog.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -68,6 +68,17 @@ class mihome extends StatelessWidget {
                 );
               },
               child: const Text('Single'),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => singleAlert()),
+                );
+              },
+              child: const Text('Position'),
             ),
           ),
         ],

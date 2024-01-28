@@ -2,7 +2,7 @@
 
 import 'dart:ui';
 
-import 'package:dialog_alert_transition/src/alertModel.dart';
+import 'package:dialog_alert_transition/src/dialogModel.dart';
 import 'package:flutter/material.dart';
 
 import '../animated/attention_seekers.dart';
@@ -14,7 +14,7 @@ import '../animated/slides.dart';
 import '../animated/specials.dart';
 import '../animated/zooms.dart';
 
-class MainAlertGo extends StatelessWidget {
+class MainAlertGoDialog extends StatelessWidget {
   BuildContext contextMain;
   bool blur, close, animate, autoClose, outClose, designer, buttonConfirm;
   transitionType animationType;
@@ -28,7 +28,7 @@ class MainAlertGo extends StatelessWidget {
 
   String acceptString, rejectString;
   Size size;
-  MainAlertGo({
+  MainAlertGoDialog({
     super.key,
     required this.title,
     required this.designer,
@@ -62,8 +62,7 @@ class MainAlertGo extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Container(
-                color: backgroundColor.withOpacity(0.5), child: const Text('')),
+            child: Container(color: backgroundColor, child: const Text('')),
           ),
           if (blur)
             Positioned(
@@ -71,22 +70,25 @@ class MainAlertGo extends StatelessWidget {
               left: 0,
               right: 0,
               bottom: 0,
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.transparent),
+              child: ClipRect(
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        color: Color.fromARGB(0, 255, 255, 255)),
+                  ),
                 ),
               ),
             ),
           if (close)
             GestureDetector(
               onTap: () {
-                controlAlertGo.close(token: token, context: context);
+                controlDialogGO.close(token: token, context: context);
               },
             ),
           Align(
               alignment: alignment,
-              child: getAlert(
+              child: _getDialog(
                 type: animationType,
                 wd: (!designer)
                     ? Container(
@@ -108,7 +110,7 @@ class MainAlertGo extends StatelessWidget {
                                   if (closeFunc != null) {
                                     closeFunc!();
                                   }
-                                  controlAlertGo.close(
+                                  controlDialogGO.close(
                                       token: token, context: context);
                                 },
                                 child: const Text('X')),
@@ -157,7 +159,7 @@ class MainAlertGo extends StatelessWidget {
                                                 rejectFunc!();
                                               }
 
-                                              controlAlertGo.close(
+                                              controlDialogGO.close(
                                                   token: token,
                                                   context: context);
                                             },
@@ -173,7 +175,7 @@ class MainAlertGo extends StatelessWidget {
                                               if (acceptFunc != null) {
                                                 acceptFunc!();
                                               }
-                                              controlAlertGo.close(
+                                              controlDialogGO.close(
                                                   token: token,
                                                   context: context);
                                             },
@@ -195,258 +197,258 @@ class MainAlertGo extends StatelessWidget {
     );
   }
 
-  Widget getAlert({required transitionType type, required Widget wd}) {
+  Widget _getDialog({required transitionType type, required Widget wd}) {
     switch (type) {
       case transitionType.FadeIn:
         return FadeIn(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInDown:
         return FadeInDown(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInDownBig:
         return FadeInDownBig(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInUp:
         return FadeInUp(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInUpBig:
         return FadeInUpBig(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInLeft:
         return FadeInLeft(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInLeftBig:
         return FadeInLeftBig(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInRight:
         return FadeInRight(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FadeInRightBig:
         return FadeInRightBig(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.BounceInDown:
         return BounceInDown(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.BounceInUp:
         return BounceInUp(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.BounceInLeft:
         return BounceInLeft(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.BounceInRight:
         return BounceInRight(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.ElasticIn:
         return ElasticIn(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.ElasticInDown:
         return ElasticInDown(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.ElasticInUp:
         return ElasticInUp(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.ElasticInLeft:
         return ElasticInLeft(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.ElasticInRight:
         return ElasticInRight(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.SlideInDown:
         return SlideInDown(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.SlideInUp:
         return SlideInUp(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.SlideInLeft:
         return SlideInLeft(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.SlideInRight:
         return SlideInRight(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FlipInX:
         return FlipInX(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.FlipInY:
         return FlipInY(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin/aquiFin
       case transitionType.ZoomIn:
         return ZoomIn(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.JelloIn:
         return JelloIn(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.Bounce:
         return Bounce(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.Dance:
         return Dance(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.Flash:
         return Flash(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.Pulse:
         return Pulse(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.Roulette:
         return Roulette(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.ShakeX:
         return ShakeX(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.ShakeY:
         return ShakeY(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.Spin:
         return Spin(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.SpinPerfect:
         return SpinPerfect(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
       case transitionType.Swing:
         return Swing(
             duration: Duration(milliseconds: duration),
             controller: (p0) {
-              controlAlertGo.controll[token] = p0;
+              controlDialogGO.controll[token]!.animation = p0;
             },
             child: wd); //aquiFin
 

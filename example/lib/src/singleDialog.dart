@@ -26,6 +26,10 @@ class _singleAlert extends State<singleAlert> {
               TextButton(
                 onPressed: () {
                   dialogAlertTransion(
+                      top: 15,
+                      left: 25,
+                      bottom: 25,
+                      rigth: 50,
                       context: context,
                       title: const Text('Flutter OutlinedButton Example'),
                       content: const Column(
@@ -35,9 +39,9 @@ class _singleAlert extends State<singleAlert> {
                         ],
                       ),
                       alignment: Alignment.topCenter,
-                      blur: true,
+                      blur: false,
                       duration: 1000,
-                      backgroundColor: Colors.black,
+                      backgroundColor: Colors.black.withOpacity(.5),
                       transitionType: e,
                       rejectString: 'Close',
                       acceptString: 'Confirm',
