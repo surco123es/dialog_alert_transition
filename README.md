@@ -8,10 +8,12 @@ Creating a dialog is simpler and easier with the dialog_alert_transition package
 ![Dialog alert in action ](https://s13.gifyu.com/images/SCS2D.gif)
 
 
+## Link Oficial PUB
+[Link oficial PUB.DEV](https://pub.dev/packages/dialog_alert_transition)
 
-EJEMPLO: 
 
-                                    
+## Link Oficial GITHUB
+[Link oficial Github](https://github.com/surco123es/dialog_alert_transitionn)
 
 
 ## Example
@@ -254,7 +256,7 @@ To send a custom dialog you must create a token and refer to the dialog handler 
                       bottom: 25,
                       rigth: 50,
                       context: context,
-                      title: const Text('Flutter OutlinedButton Example'),
+                      title: const Text('Flutter OutlinedButton Example'),s
                       content: const Column(
                         children: [
                           Text(
