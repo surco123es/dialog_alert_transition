@@ -243,9 +243,9 @@ To send a custom dialog you must create a token and refer to the dialog handler 
 ```
 # Position
 
-Change the position of the dialog with the positions right, left, bottom up by default has the value of 0
+  Change the position of the dialog with the positions right, left, bottom up by default has the value of 0
 
-
+##example
 ```dart
 
                   dialogAlertTransion(
@@ -261,11 +261,14 @@ Change the position of the dialog with the positions right, left, bottom up by d
                               'FloatingActionButton (FAB) is a property of Scaffold(). In the above example, we’ve displayed a FloatingActionButton, also we’ve modified the style of that buttons such as color and position of the FAB. The output looks like this'),
                         ],
                       ),);
+
 ```
 # blur
-disable or enabled is
-...dart
+
+  disable or enabled is true or false value
+
+```dart
 
  dialogAlertTransion(
-                      blur: true ||false,...)
-...
+                      blur: true ||false,...);
+```
