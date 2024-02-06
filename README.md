@@ -13,7 +13,7 @@ Creating a dialog is simpler and easier with the dialog_alert_transition package
 
 
 ## Link Oficial GITHUB
-[Link oficial Github](https://github.com/surco123es/dialog_alert_transitionn)
+[Link oficial Github](https://github.com/surco123es/dialog_alert_transition)
 
 
 ## Example
