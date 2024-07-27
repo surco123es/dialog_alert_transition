@@ -77,7 +77,7 @@ class customWidget extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    controlDialogGO.close(token: token, context: context);
+                    controlDialogGO.close(token: token);
                   },
                   child: const Text('back'),
                 ),

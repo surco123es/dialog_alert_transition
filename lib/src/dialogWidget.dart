@@ -83,7 +83,7 @@ class MainAlertGoDialog extends StatelessWidget {
           if (close)
             GestureDetector(
               onTap: () {
-                controlDialogGO.close(token: token, context: context);
+                controlDialogGO.close(token: token);
               },
             ),
           Align(
@@ -110,8 +110,7 @@ class MainAlertGoDialog extends StatelessWidget {
                                   if (closeFunc != null) {
                                     closeFunc!();
                                   }
-                                  controlDialogGO.close(
-                                      token: token, context: context);
+                                  controlDialogGO.close(token: token);
                                 },
                                 child: const Text('X')),
                             Container(
@@ -160,8 +159,7 @@ class MainAlertGoDialog extends StatelessWidget {
                                               }
 
                                               controlDialogGO.close(
-                                                  token: token,
-                                                  context: context);
+                                                  token: token);
                                             },
                                             child: Text(rejectString),
                                           ),
@@ -176,8 +174,7 @@ class MainAlertGoDialog extends StatelessWidget {
                                                 acceptFunc!();
                                               }
                                               controlDialogGO.close(
-                                                  token: token,
-                                                  context: context);
+                                                  token: token);
                                             },
                                             child: Text(acceptString),
                                           ),

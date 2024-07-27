@@ -22,8 +22,7 @@ class _controllerGoALert {
     return token;
   }
 
-  Future<bool> close(
-      {required int token, required BuildContext context}) async {
+  Future<bool> close({required int token}) async {
     try {
       if (controll.containsKey(token)) {
         await controll[token]!.animation?.reverse().then((_) {

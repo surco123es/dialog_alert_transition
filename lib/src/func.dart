@@ -34,7 +34,7 @@ dialogAlertTransion({
 }) async {
   try {
     if (controlDialogGO.controll.containsKey(token)) {
-      await controlDialogGO.close(token: token, context: context);
+      await controlDialogGO.close(token: token);
     }
     controlDialogGO.controll.addAll({
       token: dialogState(

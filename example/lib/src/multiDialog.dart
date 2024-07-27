@@ -42,7 +42,7 @@ class _multiAlert extends State<multiAlert> {
                                     ElevatedButton(
                                       onPressed: () {
                                         controlDialogGO.close(
-                                            token: token, context: context);
+                                            token: token);
                                       },
                                       child: const Text('back'),
                                     ),
