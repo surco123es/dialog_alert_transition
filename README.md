@@ -265,6 +265,26 @@ To send a custom dialog you must create a token and refer to the dialog handler 
                       ),);
 
 ```
+# Custom dialog
+
+  In order to get used to your dialog you must pass a generated token and thus be able to manipulate the dialog controller in your own way
+
+```dart
+
+ TextButton(
+                onPressed: () {
+                  int tk = controlDialogGO.generate();
+                  dialogAlertTransion(
+                    transitionType: e,
+                    token: tk,
+                    context: context,
+                    designer: true,
+                    alertWd: customWidget(token: tk),
+                  );
+                },
+                child: Text(e.name),
+              )
+```
 # blur
 
   disable or enabled is true or false value
